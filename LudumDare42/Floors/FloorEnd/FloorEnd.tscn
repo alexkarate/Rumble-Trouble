@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Floors/Floor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Floors/FloorEnd/FloorEnd.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+
+flags = 0
+region = Rect2( 0, 0, 0, 0 )
+margin = Rect2( 0, 0, 0, 0 )
+filter_clip = false
+
+[node name="FloorEnd" instance=ExtResource( 1 )]
+
+texture = ExtResource( 2 )
+normal_map = SubResource( 1 )
+
+

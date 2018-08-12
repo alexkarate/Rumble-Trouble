@@ -1,0 +1,89 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Level.gd" type="Script" id=1]
+[ext_resource path="res://BackGround/BG.png" type="Texture" id=2]
+[ext_resource path="res://Sounds/Key.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/Rubble.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/Teleport.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/RD42.wav" type="AudioStream" id=6]
+[ext_resource path="res://FloorGFX.gd" type="Script" id=7]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://UI/UI.tscn" type="PackedScene" id=9]
+[ext_resource path="res://UI/Title/Title.tscn" type="PackedScene" id=10]
+
+[node name="Level" type="Node" index="0"]
+
+script = ExtResource( 1 )
+levelX = 14
+levelY = 14
+
+[node name="BackGround" type="TextureRect" parent="." index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -960.0
+margin_top = -540.0
+margin_right = 960.0
+margin_bottom = 540.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+stretch_mode = 0
+
+[node name="KeySound" type="AudioStreamPlayer" parent="." index="1"]
+
+stream = ExtResource( 3 )
+volume_db = -20.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Rumble" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 4 )
+volume_db = -20.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="TeleportSound" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = ExtResource( 5 )
+volume_db = -20.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Music" type="AudioStreamPlayer" parent="." index="4"]
+
+stream = ExtResource( 6 )
+volume_db = -15.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="FloorGFX" type="Node2D" parent="." index="5"]
+
+position = Vector2( 20, 700 )
+script = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Player" parent="." index="6" instance=ExtResource( 8 )]
+
+position = Vector2( 57.7424, -245.46 )
+
+[node name="UI" parent="." index="7" instance=ExtResource( 9 )]
+
+[node name="Title" parent="." index="8" instance=ExtResource( 10 )]
+
+
