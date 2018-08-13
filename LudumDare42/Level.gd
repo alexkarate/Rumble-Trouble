@@ -280,7 +280,7 @@ func InitializeLevel (var level, var useCurLevel):
 		map[2] = [0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 2, 0, 0, 0 ]
 		map[1] = [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 3, 0, 0, 0 ]
 		map[0] = [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 ]
-		neededKeys = 3
+		neededKeys = 4
 		emit_signal("start_level", 0, 7, map)
 		pass
 	elif (level == 11):
