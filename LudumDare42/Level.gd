@@ -27,7 +27,7 @@ func _ready():
 			map[x].append(0)
 			pass
 		pass
-	connect("end_game", $Player, "")
+	connect("end_game", $Player, "EndGame")
 	connect("update_UI", $UI, "UpdateUI")
 	connect("start_level", $Player, "LevelStart")
 	connect("update_GFX", $FloorGFX, "FloorGFXUpdate")
